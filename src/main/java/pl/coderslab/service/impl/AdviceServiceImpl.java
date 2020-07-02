@@ -23,4 +23,17 @@ public class AdviceServiceImpl implements AdviceService {
     public List<Advice> getAll() {
         return adviceRepository.findAll();
     }
+
+    @Override
+    public Advice create(Advice advice) {
+        Advice savedAdvice = adviceRepository.save(advice);
+
+        return savedAdvice;
+    }
+
+    @Override
+    public Advice update(Long id, Advice advice) {
+        return adviceRepository.findOne(id);
+    }
+
 }
